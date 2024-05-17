@@ -1,0 +1,54 @@
+/* 背景色、すべて真ん中に */
+body {
+    background: #87ceeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15cm;
+    margin: 0;
+}
+
+/* タイトルの距離 */
+header {
+    margin-bottom: 20px;
+}
+
+/* タイトル文字 */
+header h1 {
+    color: white;
+    text-align: center;
+}
+
+/* 入力の部分 */
+main {
+    background: white;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ログインのボダン */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* 新規登録のボタン */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
