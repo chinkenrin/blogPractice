@@ -46,45 +46,33 @@ header {
 
 /* テキストの部分 */
 main {
-    margin: 0 auto;
+    margin: 150px auto;
     text-align: center;
     background: #76be0aa2;
     width: 70%;
     padding: 20px;
     border-radius: 10px; 
 }
-.main-visual h2 {
-    margin-bottom: 20px;
-    color: black;
+
+.main-visual {
+    margin-top: 15px;
 }
 
 form div {
     margin-bottom: 15px;
 }
 
-/* フォーム要素のスタイル */
-form input[type="text"],
-form input[type="date"],
-form input[type="file"],
-form textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
 /* ボタンの部分 */
 button {
-    width: 10%;
+    width: 20%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: #87ceeb;
     color: white;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* 一番下の部分 */

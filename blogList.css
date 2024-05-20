@@ -9,7 +9,7 @@
 
 /* ボディ全体的に真ん中 */
 body {
-    padding-top: 150px;
+    padding-top: 90px;
 }
 
 header {
@@ -44,50 +44,40 @@ header {
     font-weight: bold;
 }
 
-/* テキストの部分 */
-main {
+/*メインビジュアル*/
+/* .all-content {
+    width: 90%;
     margin: 0 auto;
+} */
+
+.main-visual {
+    background-image: url(./img/bg-main.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%; /*背景画像のサイズ指定*/
+    height: 670px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-visual h1{
+    color: blue;
+}
+
+/* ブログ記事一覧の文字 */
+article {
+    width: 90%;
+    margin: 0 auto;
+}
+
+article h2 {
+    color: #594A4E;
     text-align: center;
-    background: #76be0aa2;
-    width: 70%;
-    padding: 20px;
-    border-radius: 10px; 
-}
-.main-visual h2 {
-    margin-bottom: 20px;
-    color: black;
+    font-size: 1.5rem;
+    padding: 1rem 0;
 }
 
-form div {
-    margin-bottom: 15px;
-}
 
-/* フォーム要素のスタイル */
-form input[type="text"],
-form input[type="date"],
-form input[type="file"],
-form textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* ボタンの部分 */
-button {
-    width: 10%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #87ceeb;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-/* 一番下の部分 */
 footer{
     margin-top: 60px;
     background-color: #CCCCCC;
