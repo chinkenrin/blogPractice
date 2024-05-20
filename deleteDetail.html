@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>削除詳細画面</title>
+    <link rel="stylesheet" href="deleteDetail.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo"><img src="./img/logo.png" alt=""></div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="">ホーム</a></li>
+                    <li><a href="">ブログ登録</a></li>
+                    <li><a href="">リスト削除</a></li>
+                    <li><a href="">ログアウト</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+        <section class="main-visual">
+            <h2>記事の削除</h2>
+        </section>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="title">
+                <p for="title">タイトル</p>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="date">
+                <p for="date">日付</p>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="register_flex">
+                <p>画像</p>
+                <input type="file" name="productImage">
+            </div>
+            <div class="detail">
+                <p for="detail">詳細</p>
+                <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
+            </div>
+            <button>削除</button>
+            <button>戻す</button>
+        </form>
+    </main>
+
+    <footer>
+        <p class="pc-copyright"> <small>Copyright© 私の技術ブログ. All Rights Reserved.</small></p>
+    </footer>
+</body>
+</html>
