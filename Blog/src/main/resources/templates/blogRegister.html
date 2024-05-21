@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ編集</title>
-    <link rel="stylesheet" href="edit.css">
+    <title>ブログ登録画面</title>
+    <link rel="stylesheet" href="/css/blogRegister.css">
 </head>
+
 <body>
     <header>
-        <div class="header-logo"><img src="./img/logo.png" alt=""></div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">ブログ登録</a></li>
-                    <li><a href="">リスト削除</a></li>
-                    <li><a href="">ログアウト</a></li>
-                </ul>
-            </nav>
+        <div class="header-logo"><img src="./images/logo.png" alt=""></div>
+        <nav>
+            <ul class="menu">
+                <li><a href="">ホーム</a></li>
+                <li><a href="">ブログ登録</a></li>
+                <li><a href="">リスト削除</a></li>
+                <li><a href="">ログアウト</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <section class="main-visual">
-            <h2>記事の編集</h2>
+            <h2>新規記事追加</h2>
         </section>
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="title">
                 <p for="title">タイトル</p>
                 <input type="text" id="title" name="title" required>
             </div>
-            <div class="date">
-                <p for="date">日付</p>
-                <input type="date" id="date" name="date" required>
-            </div>
+            <p class="date">
+            <div for="date">日付</div>
+            <input type="date" id="date" name="date" required>
+            </p>
             <div class="register_flex">
                 <p>画像</p>
                 <input type="file" name="productImage">
@@ -40,7 +42,7 @@
                 <p for="detail">詳細</p>
                 <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
             </div>
-            <button>更新</button>
+            <button>登録</button>
             <button>戻す</button>
         </form>
     </main>
@@ -49,4 +51,5 @@
         <p class="pc-copyright"> <small>Copyright© 私の技術ブログ. All Rights Reserved.</small></p>
     </footer>
 </body>
+
 </html>

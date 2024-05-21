@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ログイン</title>
-    <link rel="stylesheet" href="login.css">
+    <title>登録画面</title>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 
 <body>
     <header>
-        <h1>ブログ管理システム</h1>
+        <h1>登録画面</h1>
     </header>
     <main>
         <form action="#" method="post">
+            <div>
+                <label for="username"></label>
+                <input type="text" name="username" id="username" placeholder="ユーザー名" required>
+            </div>
             <div>
                 <label for="email"></label>
                 <input type="text" name="email" id="email" placeholder="メールアドレス" required>
@@ -22,11 +26,11 @@
                 <label for="password"></label>
                 <input type="password" name="password" id="password" placeholder="パスワード" required>
             </div>
-            <button>ログイン</button>
+            <button>登録</button>
         </form>
     </main>
     <footer>
-        <a href="">新規登録</a>
+        <a href="">戻す</a>
     </footer>
 </body>
 
