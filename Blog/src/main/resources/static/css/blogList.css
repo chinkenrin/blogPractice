@@ -51,7 +51,7 @@ header {
 } */
 
 .main-visual {
-    background-image: url(./img/bg-main.jpg);
+    background-image: url(/images/bg-main.jpg);
     background-repeat: no-repeat;
     background-size:100% 100%; /*背景画像のサイズ指定*/
     height: 670px;

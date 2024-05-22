@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登録画面</title>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" th:href="@{/css/register.css}">
 </head>
 
 <body>
@@ -13,14 +13,14 @@
         <h1>登録画面</h1>
     </header>
     <main>
-        <form action="#" method="post">
+        <form th:action="@{/account/register/process}" method="post">
             <div>
                 <label for="username"></label>
-                <input type="text" name="username" id="username" placeholder="ユーザー名" required>
+                <input type="text" name="accountName" id="accountName" placeholder="ユーザー名" required>
             </div>
             <div>
                 <label for="email"></label>
-                <input type="text" name="email" id="email" placeholder="メールアドレス" required>
+                <input type="text" name="accountEmail" id="accountEmail" placeholder="メールアドレス" required>
             </div>
             <div>
                 <label for="password"></label>
@@ -30,7 +30,7 @@
         </form>
     </main>
     <footer>
-        <a href="">戻す</a>
+        <a th:href="@{/account/login}">戻す</a>
     </footer>
 </body>
 

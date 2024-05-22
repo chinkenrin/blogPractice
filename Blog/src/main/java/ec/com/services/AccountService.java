@@ -7,7 +7,7 @@ import ec.com.models.dao.AccountDao;
 import ec.com.models.entity.Account;
 
 @Service
-public class AccountServices {
+public class AccountService {
 	@Autowired
 	private AccountDao accountDao;
 	// 保存処理（登録処理）

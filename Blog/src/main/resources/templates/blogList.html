@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ一覧</title>
-    <link rel="stylesheet" href="/css/blogList.css">
+    <link rel="stylesheet" th:href="@{/css/blogList.css}">
 </head>
 
 <body>
     <header>
-        <div class="header-logo"><img src="./images/logo.png" alt=""></div>
+        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
         <nav>
             <ul class="menu">
-                <li><a href="">ホーム</a></li>
-                <li><a href="">ブログ登録</a></li>
-                <li><a href="">リスト削除</a></li>
-                <li><a href="">ログアウト</a></li>
+				<li class="list_menu" th:text="${accountName}"></li>
+				<li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+				<li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+				<li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+				<li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
             </ul>
         </nav>
     </header>
@@ -24,23 +25,19 @@
     <main>
         <div class="all-content">
             <section class="main-visual">
-                <h1>ようこそ</h1>
+				<h1 class="welcome" th:text="${accountName}"></h1>
+                <h1>様、ようこそ！</h1>
             </section>
         </div>
         <article>
             <h2>ブログ記事一覧</h2>
             <hr>
-            <section class="register-item">
-                <div class="all-view-register__button">
-                    <a href="/product/register" class="btn btn--orange btn--radius">ブログ登録</a>
-                </div>
-            </section>
-            <ul class="products">
-                <li each="product:${productList}">
-                    <a href="/product/edit/{productId}(productId=${product.productId})">
-                        <img src="/product-img/{imagePath}(imagePath=${product.productImage})" alt="">
-                        <p text="${product.productName}"></p><br>
-                        <p text="${product.productCategory}"></p>
+            <ul class="blog">
+                <li th:each="blog:${blogList}">
+                    <a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})">
+                        <img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+                        <p th:text="${blog.blogTitle}"></p><br>
+                        <p th:text="${blog.categoryName}"></p>
                     </a>
                 </li>
 

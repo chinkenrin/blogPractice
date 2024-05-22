@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ登録画面</title>
-    <link rel="stylesheet" href="/css/blogRegister.css">
+    <link rel="stylesheet" th:href="@{/css/blogRegister.css}">
 </head>
 
 <body>
     <header>
-        <div class="header-logo"><img src="./images/logo.png" alt=""></div>
+        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
         <nav>
-            <ul class="menu">
-                <li><a href="">ホーム</a></li>
-                <li><a href="">ブログ登録</a></li>
-                <li><a href="">リスト削除</a></li>
-                <li><a href="">ログアウト</a></li>
-            </ul>
+			<ul class="menu">
+				<li class="list_menu" th:text="${accountName}"></li>
+				<li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+				<li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+				<li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+				<li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
+			</ul>
         </nav>
     </header>
 
@@ -25,10 +26,10 @@
         <section class="main-visual">
             <h2>新規記事追加</h2>
         </section>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form th:action="@{/product/register/process}" method="post" enctype="multipart/form-data">
             <div class="title">
                 <p for="title">タイトル</p>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="blogTitle" name="blogTitle" required>
             </div>
             <p class="date">
             <div for="date">日付</div>
@@ -36,14 +37,14 @@
             </p>
             <div class="register_flex">
                 <p>画像</p>
-                <input type="file" name="productImage">
+                <input type="file" name="blogImage">
             </div>
-            <div class="detail">
-                <p for="detail">詳細</p>
-                <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
+            <div class="ariticle">
+                <label for="ariticle">詳細</label>
+                <textarea name="ariticle" id="ariticle" cols="30" rows="10"></textarea>
             </div>
-            <button>登録</button>
-            <button>戻す</button>
+            <button class="register">登録</button>
+            <button class="back-btn" onclick="history.back();" type="button">戻す</button>
         </form>
     </main>
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 
 <body>
@@ -13,10 +13,10 @@
         <h1>ブログ管理システム</h1>
     </header>
     <main>
-        <form action="#" method="post">
+        <form th:action="@{/account/login/process}" method="post">
             <div>
                 <label for="email"></label>
-                <input type="text" name="email" id="email" placeholder="メールアドレス" required>
+                <input type="text" name="accountEmail" id="accountEmail" placeholder="メールアドレス" required>
             </div>
             <div>
                 <label for="password"></label>
@@ -26,7 +26,7 @@
         </form>
     </main>
     <footer>
-        <a href="">新規登録</a>
+        <a th:href="@{/account/register}">新規登録</a>
     </footer>
 </body>
 
