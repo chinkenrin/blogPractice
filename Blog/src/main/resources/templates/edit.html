@@ -8,14 +8,15 @@
 </head>
 <body>
     <header>
-        <div class="header-logo"><img src="./images/logo.png" alt=""></div>
+        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
             <nav>
-                <ul class="menu">
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">ブログ登録</a></li>
-                    <li><a href="">リスト削除</a></li>
-                    <li><a href="">ログアウト</a></li>
-                </ul>
+				<ul class="menu">
+				    <li class="list_menu" th:text="${accountName}"></li>
+				    <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+				    <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+				    <li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+				    <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
+				</ul>
             </nav>
     </header>
 
@@ -23,25 +24,32 @@
         <section class="main-visual">
             <h2>記事の編集</h2>
         </section>
-        <form action="#" method="post" enctype="multipart/form-data">
-            <div class="title">
-                <p for="title">タイトル</p>
-                <input type="text" id="title" name="title" required>
-            </div>
-            <div class="date">
-                <p for="date">日付</p>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div class="register_flex">
-                <p>画像</p>
-                <input type="file" name="productImage">
-            </div>
-            <div class="detail">
-                <p for="detail">詳細</p>
-                <textarea name="detail" id="detail" cols="30" rows="10"></textarea>
-            </div>
-            <button>更新</button>
-            <button>戻す</button>
+		<form th:action="@{/product/edit/process}" method="post" enctype="multipart/form-data">
+		    <div class="title">
+		        <label for="blogTitle">タイトル</label>
+		        <input type="text" id="blogTitle" name="blogTitle" th:value="${blog.blogTitle}">
+		    </div>
+		    <div class="date">
+		        <label for="date">日付</label>
+		        <input type="date" id="date" name="date" required>
+		    </div>
+		    <div class="register_flex">
+		        <label for="blogImage">画像</label>
+		        <input type="file" id="blogImage" name="blogImage">
+		    </div>
+		    <div class="category">
+		        <label for="categoryName">カテゴリ</label>
+		        <input type="text" id="categoryName" name="categoryName" th:value="${blog.categoryName}">
+		    </div>
+		    <div class="ariticle">
+		        <label for="ariticle">詳細</label>
+		        <textarea name="ariticle" id="ariticle" cols="30" rows="10" th:text=${blog.ariticle}></textarea>
+		    </div>
+			<div class="register-section-details_flex">
+			<input type="hidden" name="blogId" th:value="${blog.blogId}"> <!--type="hidden"とは：「送信したいデータがブラウザに表示されない」-->
+            <button class="update" type="submit">更新</button>
+            <button class="back-btn" onclick="history.back();" type="button">戻す</button>
+			</div>
         </form>
     </main>
 

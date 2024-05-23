@@ -75,12 +75,18 @@ public class BlogRegisterController {
 				e.printStackTrace();
 			}
 
+			// ブログの作成に成功した場合、登録完了画面へリダイレクト
 			if (blogService.createBlog(blogTitle, categoryName, fileName, ariticle, account.getAccountId())) {
-				return "redirect:/product/list";
+				return "redirect:/product/register/process/result";
 			} else {
 				return "blogRegister.html";
-			}
-		}
+            }
+        }
+    }
 
-	}
+    		// 登録完了画面の表示
+    		@GetMapping("/product/register/process/result")
+    			public String showProcessResult() {
+    			return "process";
+    }
 }

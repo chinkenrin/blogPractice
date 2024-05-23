@@ -12,13 +12,13 @@
     <header>
         <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
         <nav>
-			<ul class="menu">
-				<li class="list_menu" th:text="${accountName}"></li>
-				<li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
-				<li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
-				<li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
-				<li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
-			</ul>
+            <ul class="menu">
+                <li class="list_menu" th:text="${accountName}"></li>
+                <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+                <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+                <li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+                <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -28,23 +28,29 @@
         </section>
         <form th:action="@{/product/register/process}" method="post" enctype="multipart/form-data">
             <div class="title">
-                <p for="title">タイトル</p>
+                <label for="blogTitle">タイトル</label>
                 <input type="text" id="blogTitle" name="blogTitle" required>
             </div>
-            <p class="date">
-            <div for="date">日付</div>
-            <input type="date" id="date" name="date" required>
-            </p>
+            <div class="date">
+                <label for="date">日付</label>
+                <input type="date" id="date" name="date" required>
+            </div>
             <div class="register_flex">
-                <p>画像</p>
-                <input type="file" name="blogImage">
+                <label for="blogImage">画像</label>
+                <input type="file" id="blogImage" name="blogImage">
+            </div>
+            <div class="category">
+                <label for="categoryName">カテゴリ</label>
+                <input type="text" id="categoryName" name="categoryName" required>
             </div>
             <div class="ariticle">
                 <label for="ariticle">詳細</label>
                 <textarea name="ariticle" id="ariticle" cols="30" rows="10"></textarea>
             </div>
-            <button class="register">登録</button>
-            <button class="back-btn" onclick="history.back();" type="button">戻す</button>
+            <div class="register-section-details_flex">
+                <button class="register" type="submit">登録</button>
+                <button class="back-btn" onclick="history.back();" type="button">戻す</button>
+            </div>
         </form>
     </main>
 

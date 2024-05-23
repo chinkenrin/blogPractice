@@ -12,12 +12,13 @@
     <header>
         <div class="header-logo"><img src="./images/logo.png" alt=""></div>
             <nav>
-                <ul class="menu">
-                    <li><a href="">ホーム</a></li>
-                    <li><a href="">ブログ登録</a></li>
-                    <li><a href="">リスト削除</a></li>
-                    <li><a href="">ログアウト</a></li>
-                </ul>
+				<ul class="menu">
+				    <li class="list_menu" th:text="${accountName}"></li>
+				    <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+				    <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+				    <li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+				    <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
+				</ul>
             </nav>
     </header>
 
@@ -26,7 +27,7 @@
             <h2>記事の追加が完了しました。</h2>
         </section>
         <form action="#" method="post">
-            <button>⇐メニューへ戻す</button>
+            <button class="back-btn" type="button" onclick="location.href='/product/blogList'">⇐ホームへ戻す</button>
         </form>
     </main>
 

@@ -13,11 +13,11 @@
         <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
         <nav>
             <ul class="menu">
-				<li class="list_menu" th:text="${accountName}"></li>
-				<li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
-				<li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
-				<li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
-				<li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
+                <li class="list_menu" th:text="${accountName}"></li>
+                <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+                <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+                <li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
+                <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
             </ul>
         </nav>
     </header>
@@ -25,24 +25,22 @@
     <main>
         <div class="all-content">
             <section class="main-visual">
-				<h1 class="welcome" th:text="${accountName}"></h1>
+                <h1 class="welcome" th:text="${accountName}"></h1>
                 <h1>様、ようこそ！</h1>
             </section>
         </div>
         <article>
             <h2>ブログ記事一覧</h2>
             <hr>
-            <ul class="blog">
-                <li th:each="blog:${blogList}">
-                    <a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})">
-                        <img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+            <ul class="menu">
+                <li th:each="blog : ${blogList}">
+                    <a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
+                        <img th:src="@{/product-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
                         <p th:text="${blog.blogTitle}"></p><br>
                         <p th:text="${blog.categoryName}"></p>
                     </a>
                 </li>
-
             </ul>
-
         </article>
     </main>
     <footer>
