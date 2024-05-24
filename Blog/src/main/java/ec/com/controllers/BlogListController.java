@@ -25,9 +25,9 @@ public class BlogListController {
 	public String getBlogList(Model model) {
 		// セッションからログインしている人の情報を取得
 		Account account = (Account) session.getAttribute("loginAccountInfo");
-		// もし、Account==null ログイン画面にリダイレクトする
-		// そうでない場合
-		// ログインしている人の名前の情報を画面に渡してブログ一覧のblogList.htmlを表示。
+		// もし、Account == null ログイン画面にリダイレクトする
+		// そうでない場合⇒　ログインしている人の名前の情報を画面に渡してブログ一覧のblogList.htmlを表示。
+		
 		if (account == null) {
 			return "redirect:/account/login";
 		} else {

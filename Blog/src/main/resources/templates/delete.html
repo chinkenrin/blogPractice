@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/delete.css">
+    <title>削除完了</title>
+    <link rel="stylesheet" th:href="@{/css/delete.css}">
 </head>
 
 <body>
     <header>
-        <div class="header-logo"><img src="./images/logo.png" alt=""></div>
+        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
         <nav>
             <ul class="menu">
-                <li><a href="">ホーム</a></li>
-                <li><a href="">ブログ登録</a></li>
-                <li><a href="">リスト削除</a></li>
-                <li><a href="">ログアウト</a></li>
+                <li class="list_menu" th:text="${accountName}"></li>
+                <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
+                <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
+                <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
             </ul>
         </nav>
     </header>
@@ -25,9 +25,9 @@
         <section class="main-visual">
             <h2>記事の削除が完了しました。</h2>
         </section>
-        <form action="#" method="post">
-            <button>⇐メニューへ戻す</button>
-        </form>
+		<form action="#" method="post">
+		    <button class="back-btn" type="button" onclick="location.href='/product/blogList'">⇐ホームへ戻す</button>
+		</form>
     </main>
 
     <footer>

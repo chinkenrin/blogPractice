@@ -20,12 +20,12 @@ public class BlogService {
 	if(accountId == null) {
 		return null;
 	}else {
-		return blogDao.findAll();
+		return blogDao.findByAccountId(accountId);
 		}
 	}	
 	
 	// ブログの登録処理チェック
-	// もし、findByProductNameが==nullだったら、true　⇒保存処理
+	// もし、findByCategoryNameが==nullだったら、true　⇒保存処理
 	// そうでない場合、false　⇒処理しない
 	
 	public boolean createBlog(String blogTitle, 
@@ -73,8 +73,17 @@ public class BlogService {
 			return true;
 		}
 	}
-	
-	
-	
-
+	// 削除処理のチェック
+	// もし、コントローラークラスから受け取ったblogIdがnullであれば
+	// false削除
+	// そうでない場合、deleteByBlogIdを使って削除処理
+	// true
+	public boolean deleteBlog(Long blogId) {
+		if (blogId == null) {
+			return false;
+		} else {
+			blogDao.deleteByBlogId(blogId);
+			return true;
+		}
+	}
 }

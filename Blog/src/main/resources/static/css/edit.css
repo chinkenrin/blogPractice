@@ -87,6 +87,13 @@ button {
     margin-bottom: 5px;
 }
 
+/* 削除ボタンの色を赤に */
+button.delete-btn {
+    background-color: red; 
+}
+
+
+
 /* 一番下の部分 */
 footer{
     margin-top: 60px;

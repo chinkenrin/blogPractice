@@ -79,15 +79,21 @@ public class BlogEditController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
-			if (blogService.blogUpdate(blogId, categoryName, ariticle, fileName, blogTitle,
+			
+			//blogUpdate（変数）⇐必ず順番に書く
+			if (blogService.blogUpdate(blogId, blogTitle, categoryName, fileName, ariticle,
 					account.getAccountId())) {
-				return "redirect:/product/blogList";
+				return "redirect:/product/edit/process/result";
 			} else {
 				return "redirect:/product/edit" + blogId;
 			}
 		}
 
 	}
-
+	
+	// 更新完了画面の表示
+	@GetMapping("/product/edit/process/result")
+		public String showProcessResult() {
+		return "update";
+	}
 }

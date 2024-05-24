@@ -16,7 +16,6 @@
                 <li class="list_menu" th:text="${accountName}"></li>
                 <li class="list_menu"><a th:href="@{/product/blogList}">ホーム</a></li>
                 <li class="list_menu"><a th:href="@{/product/register}">ブログ登録</a></li>
-                <li class="list_menu"><a th:href="@{/product/delete}">リスト削除</a></li>
                 <li class="list_menu"><a th:href="@{/account/logout}">ログアウト</a></li>
             </ul>
         </nav>
@@ -29,22 +28,27 @@
         <form th:action="@{/product/register/process}" method="post" enctype="multipart/form-data">
             <div class="title">
                 <label for="blogTitle">タイトル</label>
+				<br>
                 <input type="text" id="blogTitle" name="blogTitle" required>
             </div>
             <div class="date">
                 <label for="date">日付</label>
+				<br>
                 <input type="date" id="date" name="date" required>
             </div>
             <div class="register_flex">
                 <label for="blogImage">画像</label>
+				<br>
                 <input type="file" id="blogImage" name="blogImage">
             </div>
             <div class="category">
                 <label for="categoryName">カテゴリ</label>
+				<br>
                 <input type="text" id="categoryName" name="categoryName" required>
             </div>
             <div class="ariticle">
                 <label for="ariticle">詳細</label>
+				<br>
                 <textarea name="ariticle" id="ariticle" cols="30" rows="10"></textarea>
             </div>
             <div class="register-section-details_flex">
