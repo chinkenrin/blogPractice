@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
+        <div class="header-logo"><a th:href="@{/product/blogList}"><img th:src="@{/images/logo.png}" alt=""></a></div>
         <nav>
             <ul class="menu">
                 <li class="list_menu" th:text="${accountName}"></li>
@@ -31,12 +31,15 @@
         <article>
             <h2>ブログ記事一覧</h2>
             <hr>
-            <ul class="menu">
+            <ul class="blog">
                 <li th:each="blog : ${blogList}">
                     <a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
                         <img th:src="@{/product-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
-                        <p th:text="${blog.blogTitle}"></p><br>
+                        <p th:text="${blog.blogTitle}"></p>
+						<br>
                         <p th:text="${blog.categoryName}"></p>
+						<br>
+						<p th:text=${blog.ariticle}></p>
                     </a>
                 </li>
             </ul>

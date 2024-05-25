@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <div class="header-logo"><img th:src="@{/images/logo.png}" alt=""></div>
+        <div class="header-logo"><a th:href="@{/product/blogList}"><img th:src="@{/images/logo.png}" alt=""></a></div>
         <nav>
             <ul class="menu">
                 <li class="list_menu" th:text="${accountName}"></li>
