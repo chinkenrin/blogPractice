@@ -24,8 +24,8 @@
     <main>
         <div class="all-content">
             <section class="main-visual">
-                <h1 class="welcome" th:text="${accountName}"></h1>
-                <h1>様、ようこそ！</h1>
+                <h1 id="in2"　class="welcome" th:text="${accountName}"></h1>
+                <h1 id="in">様、ようこそ！</h1>
             </section>
         </div>
         <article>
@@ -44,6 +44,8 @@
                 </li>
             </ul>
         </article>
+		<script th:src="@{https://code.jquery.com/jquery-3.7.1.min.js}" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+		<script th:src="@{/js/code.js}"></script>
     </main>
     <footer>
         <p class="pc-copyright"> <small>Copyright© 私の技術ブログ. All Rights Reserved.</small></p>

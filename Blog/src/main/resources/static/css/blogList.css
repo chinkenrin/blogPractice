@@ -71,6 +71,15 @@ header {
     margin: 0 auto;
 } */
 
+/*ようこその動き*/
+#in{
+    display: none;
+}
+
+#in2{
+    display: none;
+}
+
 .main-visual {
     background-image: url(/images/bg-main.jpg);
     background-repeat: no-repeat;
